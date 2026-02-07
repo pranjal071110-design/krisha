@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>For Krisha ❤️</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #050507;
+            --bg-soft: #0c0c12;
+            --accent: #ff4d9d;
+            --accent-soft: rgba(255,77,157,0.15);
+            --text: #e6e6f0;
+            --text-dim: #9fa3c0;
+            --glass: rgba(255,255,255,0.04);
+            --border: rgba(255,255,255,0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: radial-gradient(circle at 20% 30%, #111122, #050507 60%);
+            color: var(--text);
+            overflow-x: hidden;
+        }
+
+        canvas#bgCanvas {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+        }
+
+        section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 24px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .card {
+            max-width: 900px;
+            width: 100%;
+            padding: 50px;
+            border-radius: 28px;
+            background: var(--glass);
+            backdrop-filter: blur(18px);
+            border: 1px solid var(--border);
+            box-shadow: 0 40px 120px rgba(0,0,0,0.6);
+            text-align: center;
+            animation: fadeUp 1.2s ease both;
+        }
+
+        h1, h2 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        h1 {
+            font-size: clamp(42px, 6vw, 72px);
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: clamp(28px, 4vw, 48px);
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.7;
+            color: var(--text-dim);
+        }
+
+        .letter {
+            text-align: left;
+            font-size: 18px;
+            line-height: 1.9;
+            color: var(--text);
+            margin-top: 20px;
+        }
+
+        .highlight {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .btn {
+            margin-top: 40px;
+            padding: 16px 38px;
+            border-radius: 999px;
+            border: none;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            color: white;
+            background: linear-gradient(135deg, #ff4d9d, #9d4dff);
+            box-shadow: 0 10px 40px rgba(255,77,157,0.35);
+            transition: transform .3s ease, box-shadow .3s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 60px rgba(255,77,157,0.45);
+        }
+
+        .heart {
+            position: fixed;
+            font-size: 22px;
+            animation: floatHeart 6s linear forwards;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        @keyframes floatHeart {
+            from { transform: translateY(0) scale(1); opacity: 1; }
+            to { transform: translateY(-110vh) scale(1.6); opacity: 0; }
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .final-question {
+            font-size: clamp(36px, 5vw, 64px);
+            margin-bottom: 30px;
+        }
+
+        .choice-row {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .yes-btn {
+            background: linear-gradient(135deg, #ff4d9d, #ff7ac3);
+        }
+
+        .no-btn {
+            background: #1a1a26;
+            border: 1px solid var(--border);
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: var(--text-dim);
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+<canvas id="bgCanvas"></canvas>
+
+<!-- Section 1 -->
+<section>
+    <div class="card">
+        <h1>Hey Krisha ❤️</h1>
+        <p>
+            I made this little world because there is something I have wanted to tell you.
+            <br><br>
+            From the moment you walked into my life, something just felt...
+            <span class="highlight">different</span>.
+        </p>
+        <button class="btn" onclick="nextSection()">Continue</button>
+    </div>
+</section>
+
+<!-- Section 2 Love Letter -->
+<section style="display:none">
+    <div class="card">
+        <h2>A Letter For You</h2>
+        <div class="letter">
